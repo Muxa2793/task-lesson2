@@ -2,14 +2,20 @@
 # Необходимо вывести имена всех учеников из списка с новой строки
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+
+for name in names:
+    print(name)
+print('')    
 
 
 # Задание 2
 # Необходимо вывести имена всех учеников из списка, рядом с именем показать количество букв в нём.
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+
+for name in names:
+    print(f'{name} {len(name)}')
+print('')
 
 
 # Задание 3
@@ -21,8 +27,18 @@ is_male = {
   'Вася': True,
   'Маша': False,
 }
+
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+
+name = 0
+for male in is_male:
+    if is_male[male] == True:
+        print(f'{names[name]} - мужской')
+        name += 1
+    elif is_male[male] == False:
+        print(f'{names[name]} - женский')
+        name += 1
+print('\n')
 
 
 # Задание 4
@@ -36,6 +52,11 @@ groups = [
   ['Вася', 'Маша'],
   ['Оля', 'Петя', 'Гриша'],
 ]
+print(f'Всего {len(groups)} группы')
+for group in groups:
+    print(f'В группе {len(group)} ученика')
+print('\n')
+
 # ???
 
 
@@ -49,4 +70,10 @@ groups = [
   ['Вася', 'Маша'],
   ['Оля', 'Петя', 'Гриша'],
 ]
-# ???
+
+group_count = 1
+for group in groups:
+    print(f'\nГруппа {group_count}:', end = ' ')
+    group_count += 1
+    for student in group:
+        print(student, end = ', ')
